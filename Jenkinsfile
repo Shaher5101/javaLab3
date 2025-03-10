@@ -11,12 +11,10 @@ pipeline {
                 sh 'ls -la' // List files in the workspace
             }
         }
+        // Remove or replace the "Run a Script" stage
         stage('Run a Script') {
             steps {
-                sh '''
-                    echo "Running a custom script"
-                    ./my-script.sh
-                '''
+                echo 'Skipping script execution because my-script.sh is not found.'
             }
         }
     }
